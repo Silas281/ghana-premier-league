@@ -199,7 +199,7 @@ require_once __DIR__."../../controller/leagueTable_controller.php";
                                 <div class="item" style="padding: 20px;">
                                     <div class="video-media">
                                         <img src="../dashboard-view/<?=$player['photo'] ?>" alt="Image"
-                                            class="img-fluid" style="height: 350px;  width: auto;">
+                                            class="img-fluid" style="height: 260px;  width: auto;">
                                         <a href="" class="d-flex play-button align-items-center" data-fancybox>
                                             <span class="icon mr-3">
                                                 <span class="icon-play"></span>

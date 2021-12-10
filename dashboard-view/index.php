@@ -130,23 +130,23 @@ window.onload = function () {
 
 var totalVisitors = 883000;
 var visitorsData = {
-	"New vs Returning Visitors": [{
+	"Plyers VS Other Personnels": [{
 		click: visitorsChartDrilldownHandler,
 		cursor: "pointer",
 		explodeOnClick: false,
 		innerRadius: "75%",
 		legendMarkerType: "square",
-		name: "New vs Returning Visitors",
+		name: "	Players VS Other Personnel",
 		radius: "100%",
 		showInLegend: true,
 		startAngle: 90,
 		type: "doughnut",
 		dataPoints: [
-			{ y: 519960, name: "New Visitors", color: "#E7823A" },
-			{ y: 363040, name: "Returning Visitors", color: "#546BC1" }
+			{ y: 519960, name: "Players", color: "#E7823A" },
+			{ y: 363040, name: "Other Personnel", color: "#546BC1" }
 		]
 	}],
-	"New Visitors": [{
+	"Other Personnel": [{
 		color: "#E7823A",
 		name: "New Visitors",
 		type: "column",
@@ -166,9 +166,9 @@ var visitorsData = {
 			{ x: new Date("1 Dec 2015"), y: 51600 }
 		]
 	}],
-	"Returning Visitors": [{
+	"Plyers": [{
 		color: "#546BC1",
-		name: "Returning Visitors",
+		name: "Plyers",
 		type: "column",
 		xValueFormatString: "MMM YYYY",
 		dataPoints: [
@@ -192,7 +192,7 @@ var newVSReturningVisitorsOptions = {
 	animationEnabled: true,
 	theme: "light2",
 	title: {
-		text: "New VS Returning Visitors"
+		text: "Plyers VS Other Personnels"
 	},
 	subtitles: [{
 		text: "Click on Any Segment to Drilldown",
@@ -230,7 +230,7 @@ var visitorsDrilldownedChartOptions = {
 	data: []
 };
 
-newVSReturningVisitorsOptions.data = visitorsData["New vs Returning Visitors"];
+newVSReturningVisitorsOptions.data = visitorsData["Plyers VS Other Personnels"];
 $("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
 
 function visitorsChartDrilldownHandler(e) {
@@ -243,7 +243,7 @@ function visitorsChartDrilldownHandler(e) {
 
 $("#backButton").click(function() { 
 	$(this).toggleClass("invisible");
-	newVSReturningVisitorsOptions.data = visitorsData["New vs Returning Visitors"];
+	newVSReturningVisitorsOptions.data = visitorsData["Plyers VS Other Personnels"];
 	$("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
 });
 
