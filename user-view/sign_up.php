@@ -26,6 +26,19 @@ session_start();
 			<p></p>
 		</div>
         <div class="form-group">
+		<?php
+                if(isset($_SESSION["errors"])){
+                    $errors = $_SESSION["errors"];
+                    // loop through errors and display them
+                    foreach($errors as $error){
+                        ?>
+                            <small style="color: red"><?= $error."<br>"; ?></small>
+                        <?php
+                    }
+                }
+                // destroy session after displaying errors
+                $_SESSION["errors"] = null;
+            ?>
 			<label>Username</label>
         	<input type="text" class="form-control" name="username" required="required">
         </div>

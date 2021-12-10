@@ -344,7 +344,7 @@ if(isset($_POST["submit-new-user"])){
         // store the errors inside session
         $_SESSION["errors"] = $errors;
         print_r($_SESSION["errors"]);
-        //header("location: ../sign_up.php");
+        header("location: ../user-view/sign_up.php");
     
     } 
  }
@@ -396,7 +396,7 @@ if(isset($_POST["submit-new-user"])){
           // store the errors inside session
           $_SESSION["errors"] = $errors;
           print_r($_SESSION["errors"]);
-          //header("location: ../sign_up.php");
+          header("location: ../user-view/login.php");
       }  
 }
 
