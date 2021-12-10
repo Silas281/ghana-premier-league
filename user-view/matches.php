@@ -259,7 +259,7 @@ require_once __DIR__."../../controller/matches_controller.php";
                 </div>
 
                 <div class="text-center widget-vs-contents mb-4">
-                  <h4>World Cup League</h4>
+                  <h4>Ghana Premier League</h4>
                   <p class="mb-5">
                     <span class="d-block"><?= $match['match_date'] ?></span>
                     <span class="d-block"><?= $match['match_time'] ?></span>
@@ -310,7 +310,7 @@ require_once __DIR__."../../controller/matches_controller.php";
                 </div>
 
                 <div class="text-center widget-vs-contents mb-4">
-                  <h4>World Cup League</h4>
+                  <h4>Ghana Premier League</h4>
                   <p class="mb-5">
                     <span class="d-block"><?= $match['match_date'] ?></span>
                     <span class="d-block"><?= $match['match_time'] ?></span>
