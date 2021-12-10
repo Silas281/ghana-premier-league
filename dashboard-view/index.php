@@ -142,13 +142,13 @@ var visitorsData = {
 		startAngle: 90,
 		type: "doughnut",
 		dataPoints: [
-			{ y: 519960, name: "Count", color: "#E7823A" },
-			{ y: 363040, name: "Count", color: "#546BC1" }
+			{ y: 519960, name: "New Visitors", color: "#E7823A" },
+			{ y: 363040, name: "Returning Visitors", color: "#546BC1" }
 		]
 	}],
 	"New Visitors": [{
 		color: "#E7823A",
-		name: "Players Count",
+		name: "New Visitors",
 		type: "column",
 		xValueFormatString: "MMM YYYY",
 		dataPoints: [
@@ -168,7 +168,7 @@ var visitorsData = {
 	}],
 	"Returning Visitors": [{
 		color: "#546BC1",
-		name: "Other personels",
+		name: "Returning Visitors",
 		type: "column",
 		xValueFormatString: "MMM YYYY",
 		dataPoints: [
@@ -192,7 +192,7 @@ var newVSReturningVisitorsOptions = {
 	animationEnabled: true,
 	theme: "light2",
 	title: {
-		text: "Personel Distribution"
+		text: "New VS Returning Visitors"
 	},
 	subtitles: [{
 		text: "Click on Any Segment to Drilldown",
@@ -230,7 +230,7 @@ var visitorsDrilldownedChartOptions = {
 	data: []
 };
 
-newVSReturningVisitorsOptions.data = visitorsData["Personel Distribution"];
+newVSReturningVisitorsOptions.data = visitorsData["New vs Returning Visitors"];
 $("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
 
 function visitorsChartDrilldownHandler(e) {
@@ -243,7 +243,7 @@ function visitorsChartDrilldownHandler(e) {
 
 $("#backButton").click(function() { 
 	$(this).toggleClass("invisible");
-	newVSReturningVisitorsOptions.data = visitorsData["Personel Distribution"];
+	newVSReturningVisitorsOptions.data = visitorsData["New vs Returning Visitors"];
 	$("#chartContainer").CanvasJSChart(newVSReturningVisitorsOptions);
 });
 
