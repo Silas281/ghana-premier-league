@@ -52,6 +52,19 @@ if(isset($_GET['player_id'])) {
 
               <!-- FORM SECTION STARTS -->
                 <form action="crud.php" method="POST">
+                <?php
+                                    if(isset($_SESSION["errors"])){
+                                        $errors = $_SESSION["errors"];
+                                        // loop through errors and display them
+                                        foreach($errors as $error){
+                                            ?>
+                                                <small style="color: red"><?= $error."<br>"; ?></small>
+                                            <?php
+                                        }
+                                    }
+                                    // destroy session after displaying errors
+                                    $_SESSION["errors"] = null;
+                                ?>
                      
                       <div class="form-group">
                         <input type="hidden" class="form-control" id="person_id" name="player_id" required value="<?php echo $player_id ?>">

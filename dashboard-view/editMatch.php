@@ -56,6 +56,19 @@ require __DIR__."../../controller/matches_controller.php";
                                 <!--FORM SECTION STARTS -->
                                 <div class="container">
                                     <form action="crud.php" method="POST">
+                                    <?php
+                                        if(isset($_SESSION["errors"])){
+                                            $errors = $_SESSION["errors"];
+                                            // loop through errors and display them
+                                            foreach($errors as $error){
+                                                ?>
+                                                    <small style="color: red"><?= $error."<br>"; ?></small>
+                                                <?php
+                                            }
+                                        }
+                                        // destroy session after displaying errors
+                                        $_SESSION["errors"] = null;
+                                    ?>
                                     <div class="form-group" hidden>
                                             <label for="" class="col-form-label">ID:</label>
                                             <input type="text" class="form-control" id="versus" name="id"

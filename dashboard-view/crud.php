@@ -567,7 +567,8 @@ if(isset($_POST['submit-edit-club'])){
     if(count($errors)>0){
        // store the errors inside session
        $_SESSION["errors"] = $errors;
-       print_r($_SESSION["errors"]);
+       //print_r($_SESSION["errors"]);
+       header("Location: editClub.php"); 
     }else{
       // upload image
       $upload_image = move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);

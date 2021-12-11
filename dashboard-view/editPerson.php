@@ -56,7 +56,20 @@ require __DIR__."../../controller/person_controller.php";
                             <div class="col-md-8 col-sm-12 col-xs-12 profile-text mt mb centered">
                                 <!-- FORM SECTION STARTS -->
                                 <form action="crud.php" method="POST" enctype="multipart/form-data">
-                                    <div class="form-group">
+                                <?php
+                                        if(isset($_SESSION["errors"])){
+                                            $errors = $_SESSION["errors"];
+                                            // loop through errors and display them
+                                            foreach($errors as $error){
+                                                ?>
+                                                    <small style="color: red"><?= $error."<br>"; ?></small>
+                                                <?php
+                                            }
+                                        }
+                                        // destroy session after displaying errors
+                                        $_SESSION["errors"] = null;
+                                    ?>
+                                        <div class="form-group">
                                         <label for="fname" class="col-form-label">ID </label>
                                         <input type="number" class="form-control" id="person_id" name="person_id"
                                             value="<?= $person[0]['person_id']?>" required>

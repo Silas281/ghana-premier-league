@@ -9,7 +9,7 @@ Description: A mini project for the Web Tech Class
 
 require __DIR__."../../controller/clubs_controller.php"; 
 
-
+session_start();
   $clubObj = new ClubController();
   if(isset($_GET['club_name'])){
   $club_name=$_GET['club_name'];
@@ -56,6 +56,19 @@ require __DIR__."../../controller/clubs_controller.php";
                                 <div class="form-wrapper">
                                      <!-- FORM SECTION STARTS -->
                                 <form action="crud.php" method="POST" enctype="multipart/form-data">
+                                <?php
+                                    if(isset($_SESSION["errors"])){
+                                        $errors = $_SESSION["errors"];
+                                        // loop through errors and display them
+                                        foreach($errors as $error){
+                                            ?>
+                                                <small style="color: red"><?= $error."<br>"; ?></small>
+                                            <?php
+                                        }
+                                    }
+                                    // destroy session after displaying errors
+                                    $_SESSION["errors"] = null;
+                                ?>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Club Name</label>
                                         <input type="text" class="form-control" id="club_name" name="club_name"
